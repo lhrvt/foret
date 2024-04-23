@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     var time = 0.;
-    // const xr = scene.createDefaultXRExperienceAsync({
-    //     // ask for an ar-session
-    //     uiOptions: {
-    //       sessionMode: "immersive-ar",
-    //     },
-    //   });
+    const xr = scene.createDefaultXRExperienceAsync({
+        // ask for an ar-session
+        uiOptions: {
+          sessionMode: "immersive-ar",
+        },
+      });
     
 
     BABYLON.Effect.ShadersStore['customVertexShader'] = `
