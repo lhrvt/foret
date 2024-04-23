@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // parent
             muffinMesh2 = meshes[0];
            
-            muffinMesh2.position = new BABYLON.Vector3(-2, 2, 10);
+            muffinMesh2.position = new BABYLON.Vector3(-2, -2, 10);
             
             checkMat(meshes[1], choco_toon)
             checkMat(meshes[5], white_toon)
