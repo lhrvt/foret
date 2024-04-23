@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var scene = new BABYLON.Scene(engine);
     var particleSystemEtat = false
 
-    var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2, 5, new BABYLON.Vector3(0, 0, 0));
+    const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 1, -5), scene);
     
     const xrHelper = scene.createDefaultXRExperienceAsync();
     camera.attachControl(canvas, true);
@@ -16,7 +16,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     var time = 0.;
+    const xr = scene.createDefaultXRExperienceAsync({
+        uiOptions: {
+            sessionMode: "immersive-ar",
+            referenceSpaceType: "local-floor",
+            onError: (error) => {
+                alert(error);
+            }
+        },
+        optionalFeatures: true
+    });
 
+    
 
     BABYLON.Effect.ShadersStore['customVertexShader'] = `
         precision highp float;
