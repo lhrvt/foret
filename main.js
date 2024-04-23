@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var particleSystemEtat = false
 
     const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 1, -5), scene);
+    camera.setTarget(BABYLON.Vector3.Zero());
+    camera.attachControl(canvas, true);
     
-    const xrHelper = scene.createDefaultXRExperienceAsync();
+    
     camera.attachControl(canvas, true);
 
     var light_h = new BABYLON.HemisphericLight("light_h");
@@ -17,16 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     var time = 0.;
     const xr = scene.createDefaultXRExperienceAsync({
+        // ask for an ar-session
         uiOptions: {
-            sessionMode: "immersive-ar",
-            referenceSpaceType: "local-floor",
-            onError: (error) => {
-                alert(error);
-            }
+          sessionMode: "immersive-ar",
         },
-        optionalFeatures: true
-    });
-
+      });
     
 
     BABYLON.Effect.ShadersStore['customVertexShader'] = `
