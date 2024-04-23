@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 1, -5), scene);
     camera.setTarget(BABYLON.Vector3.Zero());
     camera.attachControl(canvas, true);
-    
-    
-    camera.attachControl(canvas, true);
+
 
     var light_h = new BABYLON.HemisphericLight("light_h");
     var light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 0, 0), scene);
@@ -19,16 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     
     var time = 0.;
 
-    var createScene = async function () {
         
-    const xr = await scene.createDefaultXRExperienceAsync({
+    const xr =  scene.createDefaultXRExperienceAsync({
         // ask for an ar-session
         uiOptions: {
           sessionMode: "immersive-ar",
         },
       });
-      return scene;
-    }
 
     BABYLON.Effect.ShadersStore['customVertexShader'] = `
         precision highp float;
@@ -171,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         BABYLON.SceneLoader.ImportMesh(null, "./asset/", "muffin.glb", scene, function (meshes) {
             muffinMesh = meshes[0];
-            muffinMesh.position = new BABYLON.Vector3(2, 2, 10);
+            muffinMesh.position = new BABYLON.Vector3(2, 2, 25);
             
             checkMat(meshes[2], brown_toon)
             checkMat(meshes[5], white_toon)
