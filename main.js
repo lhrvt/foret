@@ -18,13 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     var time = 0.;
-    const xr = scene.createDefaultXRExperienceAsync({
+
+    var createScene = async function () {
+        
+    const xr = await scene.createDefaultXRExperienceAsync({
         // ask for an ar-session
         uiOptions: {
           sessionMode: "immersive-ar",
         },
       });
-    
+      return scene;
+    }
 
     BABYLON.Effect.ShadersStore['customVertexShader'] = `
         precision highp float;
