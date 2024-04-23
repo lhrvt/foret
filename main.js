@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
         needAlphaTesting: false,
         attributes: ['position', 'normal'],
         uniforms: ['worldViewProjection'],
-        baseColor: new BABYLON.Vector3(0.2, 1, 1) // Couleur de base blanche
 
     });
     
@@ -172,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         BABYLON.SceneLoader.ImportMesh(null, "./asset/", "muffin.glb", scene, function (meshes) {
             muffinMesh = meshes[0];
-            muffinMesh.position = new BABYLON.Vector3(2, -2, 10);
+            muffinMesh.position = new BABYLON.Vector3(2, 2, 10);
             
             checkMat(meshes[2], brown_toon)
             checkMat(meshes[5], white_toon)
@@ -187,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // parent
             muffinMesh2 = meshes[0];
            
-            muffinMesh2.position = new BABYLON.Vector3(-2, -2, 10);
+            muffinMesh2.position = new BABYLON.Vector3(-2, 2, 10);
             
             checkMat(meshes[1], choco_toon)
             checkMat(meshes[5], white_toon)
