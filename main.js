@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var particleSystemEtat = false
 
     var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2, 5, new BABYLON.Vector3(0, 0, 0));
+    
+    const xrHelper = scene.createDefaultXRExperienceAsync();
     camera.attachControl(canvas, true);
 
     var light_h = new BABYLON.HemisphericLight("light_h");
