@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     var time = 0.;
-    const xr = scene.createDefaultXRExperienceAsync({
-        // ask for an ar-session
-        uiOptions: {
-          sessionMode: "immersive-ar",
-        },
-      });
+    // const xr = scene.createDefaultXRExperienceAsync({
+    //     // ask for an ar-session
+    //     uiOptions: {
+    //       sessionMode: "immersive-ar",
+    //     },
+    //   });
     
 
     BABYLON.Effect.ShadersStore['customVertexShader'] = `
@@ -115,10 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (intensity > 0.6) {
         
-            gl_FragColor = vec4(0.3, 0.1, 0.0, 0.95);
+            gl_FragColor = vec4(0.3, 0.1, 0.0, 1.0);
         } else if (intensity > 0.4) {
             
-            gl_FragColor = vec4(0.3, 0.1, 0.0, 0.9);
+            gl_FragColor = vec4(0.3, 0.1, 0.0, 1.0);
         } else if (intensity > 0.2) {
             
             gl_FragColor = vec4(0.3, 0.1, 0.0, 0.8);
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         BABYLON.SceneLoader.ImportMesh(null, "./asset/", "muffin.glb", scene, function (meshes) {
             muffinMesh = meshes[0];
-            muffinMesh.position = new BABYLON.Vector3(2, -1, 0);
+            muffinMesh.position = new BABYLON.Vector3(2, -2, 10);
             
             checkMat(meshes[2], brown_toon)
             checkMat(meshes[5], white_toon)
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // parent
             muffinMesh2 = meshes[0];
            
-            muffinMesh2.position = new BABYLON.Vector3(-2, -1, 0);
+            muffinMesh2.position = new BABYLON.Vector3(-2, -2, 10);
             
             checkMat(meshes[1], choco_toon)
             checkMat(meshes[5], white_toon)
