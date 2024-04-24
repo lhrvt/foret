@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         BABYLON.SceneLoader.ImportMesh(null, "./asset/", "muffin.glb", scene, function (meshes) {
             muffinMesh = meshes[0];
-            muffinMesh.position = new BABYLON.Vector3(2, -2, 8);
+            muffinMesh.position = new BABYLON.Vector3(2, -3, 6);
             
             checkMat(meshes[2], brown_toon)
             checkMat(meshes[5], white_toon)
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // parent
             muffinMesh2 = meshes[0];
            
-            muffinMesh2.position = new BABYLON.Vector3(-2, -2, 8);
+            muffinMesh2.position = new BABYLON.Vector3(-2, -3, 6);
             
             checkMat(meshes[1], choco_toon)
             checkMat(meshes[5], white_toon)
@@ -315,6 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scene.registerBeforeRender(function() {
             brown_toon.setFloat("time", time); 
             white_toon.setFloat("time", time);
+            choco_toon.setFloat("time", time);
             time += Math.cos(Date.now() * 0.0010) * 0.10;        
         });
     
