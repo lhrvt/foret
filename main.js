@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (intensity > 0.6) {
 
-            gl_FragColor = vec4(0.4 , 0.2, 0.0, 1.0 );
+            gl_FragColor = vec4(0.4 , 0.2, 0.2, 1.0 );
         } else if (intensity > 0.2) {
 
-            gl_FragColor = vec4(0.4, 0.2, 0.0, 0.7);
+            gl_FragColor = vec4(0.6 , 0.35, 0.3, 1.0);
         } else {
 
-            gl_FragColor = vec4(0.4, 0.2, 0.0, 0.5);
+            gl_FragColor = vec4(0.8 , 0.45, 0.3, 1.0);
         }
     }
 `;
@@ -85,16 +85,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (intensity > 0.6) {
         
-            gl_FragColor = vec4(0.0, 0.0, 0.0, 0.7);
+            gl_FragColor = vec4(0.4, 0.4, 0.4, 1.0);
         } else if (intensity > 0.4) {
             
-            gl_FragColor = vec4(0.4, 0.4, 0.4, 0.7);
+            gl_FragColor = vec4(0.6, 0.6, 0.6, 1.0);
         } else if (intensity > 0.2) {
             
-            gl_FragColor = vec4(0.4, 0.4, 0.4, 0.5);
+            gl_FragColor = vec4(0.9, 0.9, 0.9, 1.0);
         }else {
             
-            gl_FragColor = vec4(0.2, 0.2, 0.2, 0.2);
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
         }
     }
     `;
@@ -114,16 +114,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (intensity > 0.6) {
         
-            gl_FragColor = vec4(0.3, 0.1, 0.0, 1.0);
+            gl_FragColor = vec4(0.6, 0.3, 0.2, 1.0);
         } else if (intensity > 0.4) {
             
-            gl_FragColor = vec4(0.3, 0.1, 0.0, 1.0);
+            gl_FragColor = vec4(0.5, 0.25, 0.2, 1.0);
         } else if (intensity > 0.2) {
             
-            gl_FragColor = vec4(0.3, 0.1, 0.0, 0.8);
+            gl_FragColor = vec4(0.4, 0.2, 0.2, 1.0);
         }else {
             
-            gl_FragColor = vec4(0.3, 0.1, 0.0, 0.7);
+            gl_FragColor = vec4(0.3, 0.1, 0.0, 1.0);
         }
     }
     `;
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         BABYLON.SceneLoader.ImportMesh(null, "./asset/", "muffin.glb", scene, function (meshes) {
             muffinMesh = meshes[0];
-            muffinMesh.position = new BABYLON.Vector3(2, 2, 25);
+            muffinMesh.position = new BABYLON.Vector3(2, -2, 8);
             
             checkMat(meshes[2], brown_toon)
             checkMat(meshes[5], white_toon)
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // parent
             muffinMesh2 = meshes[0];
            
-            muffinMesh2.position = new BABYLON.Vector3(-2, -2, 10);
+            muffinMesh2.position = new BABYLON.Vector3(-2, -2, 8);
             
             checkMat(meshes[1], choco_toon)
             checkMat(meshes[5], white_toon)
