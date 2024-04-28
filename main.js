@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     camera.attachControl(canvas, true);
 
 
-    var light_h = new BABYLON.HemisphericLight("light_h");
-    var light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 0, 0), scene);
-    light.intensity = 0;
-    light_h.intensity = 0.7;
+    var light_h = new BABYLON.HemisphericLight("light_h", new BABYLON.Vector3(0, 5, -7));
+    var light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 5, -7), scene);
+    light.intensity =1.5;
+    light_h.intensity = 1;
 
     
     var time = 0.;
@@ -25,11 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
 
-        BABYLON.SceneLoader.ImportMesh(null, "./asset/", "rocher.glb", scene, function (meshes) {
+        BABYLON.SceneLoader.ImportMesh(null, "./asset/", "porte_palais.glb", scene, function (meshes) {
             rocher = meshes[0];
-            rocher.position = new BABYLON.Vector3(2, -2, 6);
+            rocher.position = new BABYLON.Vector3(5, -1,3);
             rocher.scaling.z = 1
-            rocher.rotation.x += 0.1;
+            rocher.rotationQuaternion = null;
+            rocher.rotation.y = 90 ;
             
             
             
