@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
    var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(0, 200, 0), new BABYLON.Vector3(0, -1, 0), Math.PI / 4, 2, scene);
-light.intensity = 50000*7; // Intensité de la lumière
+light.intensity = 50000*10; // Intensité de la lumière
 light.diffuse = new BABYLON.Color3(1, 1, 1); // Couleur diffuse de la lumière
 light.specular = new BABYLON.Color3(1, 1, 1); // Couleur spéculaire de la lumière
 
@@ -18,7 +18,7 @@ light.specular = new BABYLON.Color3(1, 1, 1); // Couleur spéculaire de la lumi�
 // Définir les couleurs pour la partie supérieure et inférieure de la sphère
         hemiLight.diffuse = new BABYLON.Color3(0.5, 0.2, 0.2); // Couleur diffuse pour la partie supérieure
         hemiLight.groundColor = new BABYLON.Color3(0.5, 0.5, 0.5); // Couleur diffuse pour la partie inférieure
-        hemiLight.intensity = 0.5;
+        hemiLight.intensity = 1;
     
     var time = 0;
 
